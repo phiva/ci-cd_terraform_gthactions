@@ -13,8 +13,9 @@ resource "aws_s3_bucket_ownership_controls" "teste" {
     }
 }
 
+
 resource "aws_s3_bucket_acl" "teste" {
-    depends_on = [ aws_s3_bucket_ownership_controls.teste ]
+  depends_on = [aws_s3_bucket_ownership_controls.teste]
 
     bucket = aws_s3_bucket.teste.id
     acl = "private"
